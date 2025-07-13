@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Pinterest Downloader",
+    "version": "1.0",
+    "description": "Runs a custom script on Pinterest.",
+    "background": {
+      "service_worker": "background.js"
+    },
+   
+    "content_scripts": [ {
+      "js": [ "inject.js" ],
+      "matches": [ "https://*.pinterest.com/*" ],
+      "run_at": "document_start"
+   } ],
+
+
+  "web_accessible_resources": [ {
+        "matches": [ "https://*.pinterest.com/*" ],
+        "resources": [ "content.js" ]
+     } ]
+  }
+  
